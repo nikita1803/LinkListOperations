@@ -76,6 +76,19 @@ public class MyLinkedList
 		this.head = head.getNext();
 		return tempNode;
 	}
+	/**
+	 * popLast is a function use to delete the last element from the list
+	 * @return 
+	 */
+	public INode popLast() {
+        INode tempNode = head;
+        while (!tempNode.getNext().equals(tail)) {
+            tempNode = tempNode.getNext();
+        }
+        this.tail = tempNode;
+        tempNode = null;
+        return tempNode;
+    }
 	
 	/**
 	 * this is a function use to print the nodes of the linked list
