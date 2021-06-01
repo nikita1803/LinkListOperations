@@ -105,7 +105,6 @@ public class MyLinkedList
         tempNode = tempNode.getNext();
         System.out.println("Searched Element is: " + tempNode.getKey());
     }
-	
 	/**
 	 * this is a function use to print the nodes of the linked list
 	 */
