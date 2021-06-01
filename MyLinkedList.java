@@ -105,6 +105,21 @@ public class MyLinkedList
         tempNode = tempNode.getNext();
         System.out.println("Searched Element is: " + tempNode.getKey());
     }
+	/*
+	 * delete function is use to delete the element 40 from the linked list
+	 */
+	public void delete(INode deleteNode) 
+	{
+        INode tempNode = head;
+        while (tempNode.getNext() != deleteNode) 
+        {
+            tempNode = tempNode.getNext();
+        }
+        INode tempNode2 = tempNode;
+        tempNode = tempNode.getNext();
+        tempNode = tempNode.getNext();
+        tempNode2.setNext(tempNode);
+    }
 	/**
 	 * this is a function use to print the nodes of the linked list
 	 */

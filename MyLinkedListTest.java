@@ -146,9 +146,13 @@ public class MyLinkedListTest
 	                	 myLinkedList.tail.equals(myThirdNode);
 	        Assert.assertTrue(result);
 	 }
+	 /**
+	  * this function is use to insert the element 40 after 30
+	  */
 	 
 	 @Test
-	 public void given3Number_ToInsert40After30__ShouldPassTheLinkedListTest() {
+	 public void given3NumberToInsert40After30_ShouldPassTheLinkedListTest() 
+	 {
 	    MyNode<Integer> myFirstNode = new MyNode<>(56);
 	    MyNode<Integer> mySecondNode = new MyNode<>(30);
 	    MyNode<Integer> myThirdNode = new MyNode<>(40);
@@ -167,6 +171,32 @@ public class MyLinkedListTest
 			             myLinkedList.head.getNext().equals(mySecondNode) &&
 			             myLinkedList.head.getNext().getNext().equals(myThirdNode) &&
 			             myLinkedList.tail.equals(myFourthNode);
+	        Assert.assertTrue(result);
+	    }
+	 
+	 /**
+	  * this function is use to delete the element 40 from the link list
+	  */
+	   @Test
+	    public void given3Number_ToDeleteElement40__ShouldPassTheLinkedListTest() 
+	   {
+	        MyNode<Integer> myFirstNode = new MyNode<>(56);
+	        MyNode<Integer> mySecondNode = new MyNode<>(30);
+	        MyNode<Integer> myThirdNode = new MyNode<>(40);
+	        MyNode<Integer> myFourthNode = new MyNode<>(70);
+
+	        MyLinkedList myLinkedList = new MyLinkedList();
+	        myLinkedList.append(myFirstNode);
+	        myLinkedList.append(mySecondNode);
+	        myLinkedList.append(myThirdNode);
+	        myLinkedList.append(myFourthNode);
+	        myLinkedList.search(myThirdNode);
+	        myLinkedList.delete(myThirdNode);
+	        myLinkedList.printMyNodes();
+	        
+	        boolean result = myLinkedList.head.equals(myFirstNode) &&
+	                myLinkedList.head.getNext().equals(mySecondNode) &&
+	                myLinkedList.tail.equals(myFourthNode);
 	        Assert.assertTrue(result);
 	    }
 
