@@ -28,6 +28,7 @@ public class MyLinkedList
 			this.head.setNext(tempNode);
 		}
 	}
+	
 	public void printMyNodes()
 	{
 		StringBuffer myNodes = new StringBuffer("My Nodes : ");
