@@ -1,26 +1,42 @@
 package javapractise;
 
-public class MyStack 
+public class MyStack<k> 
 {
-	private final MyLinkedList myLinkedList;
-	
+	private final MyLinkedList<k> myLinkedList;
+	/**
+	 * Constructor of the class
+	 */
 	public MyStack()
 	{
-		this.myLinkedList = new MyLinkedList();
+		myLinkedList = new MyLinkedList<>();
 	}
-	public void push(INode myNode)
+	/**
+	 * push is use to add the element
+	 * @param element
+	 */
+	public void push(INode<k> element)
 	{
-		myLinkedList.add(myNode);
+		myLinkedList.add(element);
 	}
+	/**
+	 * this function use to print the stack
+	 */
 	public void printStack()
 	{
 		myLinkedList.printMyNodes();
 	}
-	public INode peak()
+	/**
+	 * peak is a function which is use to return the top element
+	 */
+	public INode<k> peak()
 	{
 		return myLinkedList.head;
 	}
-	public INode pop()
+	/**
+	 * pop is use to remove the element from the stack
+	 * @return
+	 */
+	public INode<k> pop()
 	{
 		return myLinkedList.pop();
 	}

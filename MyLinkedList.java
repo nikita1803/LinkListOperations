@@ -1,6 +1,6 @@
 package javapractise;
 
-public class MyLinkedList 
+public class MyLinkedList<k>
 {
 	public INode head;
 	public INode tail;
