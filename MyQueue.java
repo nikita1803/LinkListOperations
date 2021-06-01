@@ -31,4 +31,10 @@ public class MyQueue
         return myLinkedList.head ;
 
     }
+    /**
+     * dequeue is a function which is use to remove the element from the queue
+     */
+    public void dequeue() {
+        myLinkedList.pop();
+    }
 }
