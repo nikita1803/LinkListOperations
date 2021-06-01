@@ -106,7 +106,8 @@ public class MyLinkedListTest
 	 * this is the function which is use to delete the last element in the linked list
 	 */
 	@Test
-    public void given3Number_WhenDeletedLastElement_ShouldPassTheLinkedListTest() {
+    public void given3Number_WhenDeletedLastElement_ShouldPassTheLinkedListTest() 
+	{
         MyNode<Integer> myFirstNode = new MyNode<>(56);
         MyNode<Integer> mySecondNode = new MyNode<>(30);
         MyNode<Integer> myThirdNode = new MyNode<>(70);
@@ -122,4 +123,28 @@ public class MyLinkedListTest
                 		 myLinkedList.tail.equals(mySecondNode);
         Assert.assertTrue(result);
     }
+	/**
+	 * This is the function which is use to search the element 
+	 */
+	 @Test
+	 public void given3NumberWhenSearchElement_ShouldPassTheLinkedListTest() 
+	 {
+	    MyNode<Integer> myFirstNode = new MyNode<>(56);
+	    MyNode<Integer> mySecondNode = new MyNode<>(30);
+	    MyNode<Integer> myThirdNode = new MyNode<>(70);
+
+	    MyLinkedList myLinkedList = new MyLinkedList();
+	    myLinkedList.add(myThirdNode);
+	    myLinkedList.add(mySecondNode);
+	    myLinkedList.add(myFirstNode);
+
+	    myLinkedList.search(mySecondNode);
+	    myLinkedList.printMyNodes();
+
+	    boolean result = myLinkedList.head.equals(myFirstNode) &&
+	                	 myLinkedList.head.getNext().equals(mySecondNode) &&
+	                	 myLinkedList.tail.equals(myThirdNode);
+	        Assert.assertTrue(result);
+	 }
+
 }

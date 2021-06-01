@@ -80,14 +80,30 @@ public class MyLinkedList
 	 * popLast is a function use to delete the last element from the list
 	 * @return 
 	 */
-	public INode popLast() {
+	public INode popLast() 
+	{
         INode tempNode = head;
-        while (!tempNode.getNext().equals(tail)) {
+        while (!tempNode.getNext().equals(tail)) 
+        {
             tempNode = tempNode.getNext();
         }
         this.tail = tempNode;
         tempNode = null;
         return tempNode;
+    }
+	/**
+	 * Search is a function which is use to search the element
+	 * @param myNode
+	 */
+	public void search(INode myNode) 
+	{
+        INode tempNode = head;
+        while (tempNode.getNext() != myNode) 
+        {
+            tempNode = tempNode.getNext();
+        }
+        tempNode = tempNode.getNext();
+        System.out.println("Searched Element is: " + tempNode.getKey());
     }
 	
 	/**
