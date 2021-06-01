@@ -4,12 +4,18 @@ public class MyLinkedList
 {
 	public INode head;
 	public INode tail;
-	
+	/**
+	 * constructor of the class
+	 */
 	MyLinkedList()
 	{
 		this.head = null;
 		this.tail = null;
 	}
+	/**
+	 * function add is use to add the value in the linked list
+	 * @param newNode
+	 */
 	public void add(INode newNode)
 	{
 		if(this.tail == null)
@@ -29,6 +35,10 @@ public class MyLinkedList
 		}
 	}
 	
+	/**
+	 * append function is use to append the data in the linked list
+	 * @param myNode
+	 */
 	public void append(INode myNode)
 	{
 		if(this.head == null)
@@ -45,6 +55,21 @@ public class MyLinkedList
 			this.tail = myNode;
 		}
 	}
+	/**
+	 * Insert is a function which is use to insert the element between head and tail.
+	 * @param myNode
+	 * @param newNode
+	 */
+	public void Insert(INode myNode , INode newNode)
+	{
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
+	
+	/**
+	 * this is a function use to print the nodes of the linked list
+	 */
 	public void printMyNodes()
 	{
 		StringBuffer myNodes = new StringBuffer("My Nodes : ");
