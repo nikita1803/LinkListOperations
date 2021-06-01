@@ -66,6 +66,16 @@ public class MyLinkedList
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
+	/**
+	 * pop is a function which is use to delete the 1st element .
+	 * @return
+	 */
+	public INode pop()
+	{
+		INode tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
+	}
 	
 	/**
 	 * this is a function use to print the nodes of the linked list

@@ -80,4 +80,25 @@ public class MyLinkedListTest
 						 myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
+	
+	/**
+	 * this is the function which is use to delete the 1st element in the linked list
+	 */
+	@Test
+	public void given3NumberWhenDeleteFirstElementShouldPassLinkedListResult()
+	{
+		MyNode<Integer> myFirstNode = new MyNode<Integer>(70);
+		MyNode<Integer> mySecondNode = new MyNode<Integer>(30);
+		MyNode<Integer> myThirdNode = new MyNode<Integer>(56);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.add(myFirstNode);
+		myLinkedList.add(mySecondNode);
+		myLinkedList.add(myThirdNode);
+		myLinkedList.head.equals(myFirstNode);
+		myLinkedList.pop();
+		myLinkedList.printMyNodes();
+		boolean result = myLinkedList.head.equals(mySecondNode) &&
+						 myLinkedList.tail.equals(myFirstNode);
+		Assert.assertTrue(result);
+	}
 }
