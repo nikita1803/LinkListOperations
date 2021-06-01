@@ -120,6 +120,41 @@ public class MyLinkedList
         tempNode = tempNode.getNext();
         tempNode2.setNext(tempNode);
     }
+	public void sortList()
+    {
+  
+        // Node current will point to head
+        INode current = head, index = null;
+  
+        INode temp;
+  
+        if (head == null) {
+            return;
+        }
+        else {
+            while (current != null) {
+                // Node index will point to node next to
+                // current
+                index = current.getNext();
+  
+                while (index != null) {
+                    // If current node's data is greater
+                    // than index's node data, swap the data
+                    // between them
+                	current = (INode) current.getKey();
+                	index =  (INode) index.getKey();  
+                    if (current.equals(index)) {
+                        temp = current;
+                        current = index;
+                        index = temp;
+                    }
+  
+                    index = index.getNext();
+                }
+                current = current.getNext();
+            }
+        }
+    }
 	/**
 	 * this is a function use to print the nodes of the linked list
 	 */
@@ -136,4 +171,6 @@ public class MyLinkedList
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
+    
+             
 }

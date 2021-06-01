@@ -1,5 +1,8 @@
 package javapractise;
 
+import java.util.Collections;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -21,7 +24,6 @@ public class MyLinkedListTest
 		myLinkedList.printMyNodes();
 		
 	}
-	
 	/**
 	 * this function is use to insert the value in the linked list
 	 */
@@ -41,7 +43,6 @@ public class MyLinkedListTest
 						 myLinkedList.tail.equals(myFirstNode);
 		Assert.assertTrue(result);
 	}
-	
 	/**
 	 * this function is use to append the linked list
 	 */
@@ -80,7 +81,6 @@ public class MyLinkedListTest
 						 myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
 	}
-	
 	/**
 	 * this is the function which is use to delete the 1st element in the linked list
 	 */
@@ -101,7 +101,7 @@ public class MyLinkedListTest
 						 myLinkedList.tail.equals(myFirstNode);
 		Assert.assertTrue(result);
 	}
-	
+
 	/**
 	 * this is the function which is use to delete the last element in the linked list
 	 */
@@ -149,7 +149,6 @@ public class MyLinkedListTest
 	 /**
 	  * this function is use to insert the element 40 after 30
 	  */
-	 
 	 @Test
 	 public void given3NumberToInsert40After30_ShouldPassTheLinkedListTest() 
 	 {
@@ -173,7 +172,6 @@ public class MyLinkedListTest
 			             myLinkedList.tail.equals(myFourthNode);
 	        Assert.assertTrue(result);
 	    }
-	 
 	 /**
 	  * this function is use to delete the element 40 from the link list
 	  */
@@ -192,6 +190,33 @@ public class MyLinkedListTest
 	        myLinkedList.append(myFourthNode);
 	        myLinkedList.search(myThirdNode);
 	        myLinkedList.delete(myThirdNode);
+	        myLinkedList.printMyNodes();
+	        
+	        boolean result = myLinkedList.head.equals(myFirstNode) &&
+	                myLinkedList.head.getNext().equals(mySecondNode) &&
+	                myLinkedList.tail.equals(myFourthNode);
+	        Assert.assertTrue(result);
+	    }
+	   /*
+	    * this function is use to short the linked list in ascending order.
+	    */
+	   
+	   @Test
+	    public void given3NumbersShortInAscendingOeder_ShouldPassedTheLinkedListTest() 
+	   {
+	        MyNode<Integer> myFirstNode = new MyNode<>(56);
+	        MyNode<Integer> mySecondNode = new MyNode<>(30);
+	        MyNode<Integer> myThirdNode = new MyNode<>(40);
+	        MyNode<Integer> myFourthNode = new MyNode<>(70);
+
+	        MyLinkedList myLinkedList = new MyLinkedList();
+	        myLinkedList.add(mySecondNode);
+		    myLinkedList.add(myFirstNode);
+		    myLinkedList.append(myFourthNode);
+		    myLinkedList.printMyNodes();
+		    myLinkedList.Insert(mySecondNode, myThirdNode);
+		    myLinkedList.printMyNodes();
+		    myLinkedList.sortList();
 	        myLinkedList.printMyNodes();
 	        
 	        boolean result = myLinkedList.head.equals(myFirstNode) &&

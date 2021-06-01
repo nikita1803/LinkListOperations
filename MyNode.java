@@ -2,6 +2,7 @@ package javapractise;
 
 public class MyNode<k> implements INode<k>
 {
+	
 	private k key;
 	private INode next;
 	
